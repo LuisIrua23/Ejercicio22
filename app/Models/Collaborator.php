@@ -5,12 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Customer extends Model
+class Collaborator extends Model
 {
     use HasFactory;
+
     public function project(){
-        return $this->belongsTo('App\Models\Project');
+        return $this->belongsToMany('App\Models\Project');
     }
 
-    
+    public function payment(){
+        return $this->belongsTo('App\Models\Payment');
+    }
 }

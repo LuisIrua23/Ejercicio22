@@ -15,9 +15,16 @@ return new class extends Migration
             $table->id();
             $table->string('codigo');
             $table->string('descripcion');
-            $table->string('fecha_fin');
-            $table->string('fecha_inicio');
+            $table->date('fecha_fin');
+            $table->date('fecha_inicio');
             $table->string('cuantia');
+
+            $table->unsignedBigInteger('customer_id')->nullable();
+            $table->foreign('customer_id')
+            ->references('id')
+            ->on('customers')
+            ->onDelete('set null');
+        
             $table->timestamps();
         });
     }

@@ -17,6 +17,12 @@ return new class extends Migration
             $table->string('numero');
             $table->string('concepto');
             $table->string('fecha_pago');
+
+            $table->unsignedBigInteger('collaborator_id')->nullable();
+            $table->foreign('collaborator_id')
+            ->references('id')
+            ->on('collaborators')
+            ->onDelete('set null');
             $table->timestamps();
         });
     }
