@@ -30,7 +30,7 @@
         <label  class="form-label">
             Domicilio
             <br>
-            <input class="form-control"  type="date" name="domicilio" required>
+            <input class="form-control"  type="text" name="domicilio" required>
         </label>
         <br><br>
         <button class="btn btn-primary" type="submit" >Enviar Formulario:</button>
